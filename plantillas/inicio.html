@@ -1,0 +1,34 @@
+{{define "Inicio"}}
+{{template "cabecera"}}
+        <a name="" id="" class="btn btn-primary" href="/crear" role="button">Agregar Empleado</a>   
+        <br/><br/>       
+        <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Direccion</th>
+                <th>Fecha Cumpleaños</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range.}}        
+            <tr>
+                <td>{{.Id}}</td>
+                <td>{{.Nombre}}</td>
+                <td>{{.Telefono}}</td>
+                <td>{{.Direccion}}</td>
+                <td>{{.Fecha Cumpleaños}}</td>
+                <td>
+                    <a name="" id="" class="btn btn-warning" href="/editar?id={{.Id}}" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-danger" href="/borrar?id={{.Id}}" role="button">Borrar</a>
+                </td>
+            </tr>
+    {{end}}
+        </tbody>
+        </table>
+        <a name="" id="" class="btn btn-primary" href="/login" role="button">Cerrar Sesion</a>
+{{template "pie"}}
+{{end}}
